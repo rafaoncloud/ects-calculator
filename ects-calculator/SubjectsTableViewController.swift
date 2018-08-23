@@ -25,6 +25,10 @@ class SubjectsTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    @IBOutlet weak var AddSubject: UIBarButtonItem!
+    
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {

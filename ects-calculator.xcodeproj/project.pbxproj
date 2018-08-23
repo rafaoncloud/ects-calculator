@@ -14,9 +14,13 @@
 		0547F270212DF1550086B0F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0547F26E212DF1550086B0F7 /* LaunchScreen.storyboard */; };
 		0547F27A212EA85A0086B0F7 /* SubjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F279212EA85A0086B0F7 /* SubjectsTableViewController.swift */; };
 		0547F27C212EA8950086B0F7 /* SemestersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F27B212EA8950086B0F7 /* SemestersTableViewController.swift */; };
-		0547F27E212EAA570086B0F7 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F27D212EAA570086B0F7 /* Semester.swift */; };
-		0547F280212EAD2F0086B0F7 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F27F212EAD2F0086B0F7 /* Subject.swift */; };
 		0547F282212EBB4B0086B0F7 /* CourseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F281212EBB4B0086B0F7 /* CourseManager.swift */; };
+		0547F2AC212F00220086B0F7 /* ects-calculator.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 0547F2AA212F00220086B0F7 /* ects-calculator.xcdatamodeld */; };
+		0547F2BD212F051B0086B0F7 /* Semester+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F2B9212F051B0086B0F7 /* Semester+CoreDataClass.swift */; };
+		0547F2BE212F051B0086B0F7 /* Semester+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F2BA212F051B0086B0F7 /* Semester+CoreDataProperties.swift */; };
+		0547F2BF212F051B0086B0F7 /* Subject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F2BB212F051B0086B0F7 /* Subject+CoreDataClass.swift */; };
+		0547F2C0212F051B0086B0F7 /* Subject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F2BC212F051B0086B0F7 /* Subject+CoreDataProperties.swift */; };
+		0547F2C2212F08B30086B0F7 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F2C1212F08B30086B0F7 /* PersistenceService.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,9 +33,13 @@
 		0547F271212DF1550086B0F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0547F279212EA85A0086B0F7 /* SubjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsTableViewController.swift; sourceTree = "<group>"; };
 		0547F27B212EA8950086B0F7 /* SemestersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemestersTableViewController.swift; sourceTree = "<group>"; };
-		0547F27D212EAA570086B0F7 /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Semester.swift; path = model/Semester.swift; sourceTree = "<group>"; };
-		0547F27F212EAD2F0086B0F7 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Subject.swift; path = model/Subject.swift; sourceTree = "<group>"; };
 		0547F281212EBB4B0086B0F7 /* CourseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseManager.swift; path = model/CourseManager.swift; sourceTree = "<group>"; };
+		0547F2AB212F00220086B0F7 /* ects-calculator.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = "ects-calculator.xcdatamodel"; sourceTree = "<group>"; };
+		0547F2B9212F051B0086B0F7 /* Semester+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Semester+CoreDataClass.swift"; path = "db/Semester+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0547F2BA212F051B0086B0F7 /* Semester+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Semester+CoreDataProperties.swift"; path = "db/Semester+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0547F2BB212F051B0086B0F7 /* Subject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Subject+CoreDataClass.swift"; path = "db/Subject+CoreDataClass.swift"; sourceTree = "<group>"; };
+		0547F2BC212F051B0086B0F7 /* Subject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Subject+CoreDataProperties.swift"; path = "db/Subject+CoreDataProperties.swift"; sourceTree = "<group>"; };
+		0547F2C1212F08B30086B0F7 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -72,9 +80,13 @@
 				0547F271212DF1550086B0F7 /* Info.plist */,
 				0547F279212EA85A0086B0F7 /* SubjectsTableViewController.swift */,
 				0547F27B212EA8950086B0F7 /* SemestersTableViewController.swift */,
-				0547F27D212EAA570086B0F7 /* Semester.swift */,
-				0547F27F212EAD2F0086B0F7 /* Subject.swift */,
 				0547F281212EBB4B0086B0F7 /* CourseManager.swift */,
+				0547F2AA212F00220086B0F7 /* ects-calculator.xcdatamodeld */,
+				0547F2B9212F051B0086B0F7 /* Semester+CoreDataClass.swift */,
+				0547F2BA212F051B0086B0F7 /* Semester+CoreDataProperties.swift */,
+				0547F2BB212F051B0086B0F7 /* Subject+CoreDataClass.swift */,
+				0547F2BC212F051B0086B0F7 /* Subject+CoreDataProperties.swift */,
+				0547F2C1212F08B30086B0F7 /* PersistenceService.swift */,
 			);
 			path = "ects-calculator";
 			sourceTree = "<group>";
@@ -150,12 +162,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0547F2BF212F051B0086B0F7 /* Subject+CoreDataClass.swift in Sources */,
+				0547F2BD212F051B0086B0F7 /* Semester+CoreDataClass.swift in Sources */,
 				0547F268212DF1540086B0F7 /* ViewController.swift in Sources */,
+				0547F2C2212F08B30086B0F7 /* PersistenceService.swift in Sources */,
 				0547F266212DF1540086B0F7 /* AppDelegate.swift in Sources */,
+				0547F2AC212F00220086B0F7 /* ects-calculator.xcdatamodeld in Sources */,
 				0547F27A212EA85A0086B0F7 /* SubjectsTableViewController.swift in Sources */,
-				0547F27E212EAA570086B0F7 /* Semester.swift in Sources */,
+				0547F2C0212F051B0086B0F7 /* Subject+CoreDataProperties.swift in Sources */,
+				0547F2BE212F051B0086B0F7 /* Semester+CoreDataProperties.swift in Sources */,
 				0547F282212EBB4B0086B0F7 /* CourseManager.swift in Sources */,
-				0547F280212EAD2F0086B0F7 /* Subject.swift in Sources */,
 				0547F27C212EA8950086B0F7 /* SemestersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -354,6 +370,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		0547F2AA212F00220086B0F7 /* ects-calculator.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				0547F2AB212F00220086B0F7 /* ects-calculator.xcdatamodel */,
+			);
+			currentVersion = 0547F2AB212F00220086B0F7 /* ects-calculator.xcdatamodel */;
+			path = "ects-calculator.xcdatamodeld";
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = 0547F25A212DF1540086B0F7 /* Project object */;
 }

@@ -7,9 +7,12 @@
 //
 
 import UIKit
+import CoreData // Add CoreData library
 
 class SemestersTableViewController: UITableViewController {
 
+    var semesters = [Semester]()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -18,6 +21,9 @@ class SemestersTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        // Load Semesters
+        self.loadFromCoreData()
     }
 
     override func didReceiveMemoryWarning() {
@@ -25,6 +31,19 @@ class SemestersTableViewController: UITableViewController {
         // Dispose of any resources that can be recreated.
     }
 
+    func loadFromCoreData(){
+        let fetchRequest: NSFetchRequest<Semester> = Semester.fetchRequest()
+        // Load semesters
+        do{
+            let semesters = try PersistenceService.context.fetch(fetchRequest)
+            self.semesters = semesters
+            self.tableView.reloadData()
+        }catch {}
+    }
+    
+    @IBOutlet weak var AddSemester: UIBarButtonItem!
+    
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -34,10 +53,9 @@ class SemestersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        
         return 0
     }
-
+    
     /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
