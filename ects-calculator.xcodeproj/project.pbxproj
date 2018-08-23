@@ -12,6 +12,11 @@
 		0547F26B212DF1540086B0F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0547F269212DF1540086B0F7 /* Main.storyboard */; };
 		0547F26D212DF1550086B0F7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0547F26C212DF1550086B0F7 /* Assets.xcassets */; };
 		0547F270212DF1550086B0F7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0547F26E212DF1550086B0F7 /* LaunchScreen.storyboard */; };
+		0547F27A212EA85A0086B0F7 /* SubjectsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F279212EA85A0086B0F7 /* SubjectsTableViewController.swift */; };
+		0547F27C212EA8950086B0F7 /* SemestersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F27B212EA8950086B0F7 /* SemestersTableViewController.swift */; };
+		0547F27E212EAA570086B0F7 /* Semester.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F27D212EAA570086B0F7 /* Semester.swift */; };
+		0547F280212EAD2F0086B0F7 /* Subject.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F27F212EAD2F0086B0F7 /* Subject.swift */; };
+		0547F282212EBB4B0086B0F7 /* CourseManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F281212EBB4B0086B0F7 /* CourseManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -22,6 +27,11 @@
 		0547F26C212DF1550086B0F7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0547F26F212DF1550086B0F7 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0547F271212DF1550086B0F7 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0547F279212EA85A0086B0F7 /* SubjectsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectsTableViewController.swift; sourceTree = "<group>"; };
+		0547F27B212EA8950086B0F7 /* SemestersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemestersTableViewController.swift; sourceTree = "<group>"; };
+		0547F27D212EAA570086B0F7 /* Semester.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Semester.swift; path = model/Semester.swift; sourceTree = "<group>"; };
+		0547F27F212EAD2F0086B0F7 /* Subject.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = Subject.swift; path = model/Subject.swift; sourceTree = "<group>"; };
+		0547F281212EBB4B0086B0F7 /* CourseManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = CourseManager.swift; path = model/CourseManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,6 +70,11 @@
 				0547F26C212DF1550086B0F7 /* Assets.xcassets */,
 				0547F26E212DF1550086B0F7 /* LaunchScreen.storyboard */,
 				0547F271212DF1550086B0F7 /* Info.plist */,
+				0547F279212EA85A0086B0F7 /* SubjectsTableViewController.swift */,
+				0547F27B212EA8950086B0F7 /* SemestersTableViewController.swift */,
+				0547F27D212EAA570086B0F7 /* Semester.swift */,
+				0547F27F212EAD2F0086B0F7 /* Subject.swift */,
+				0547F281212EBB4B0086B0F7 /* CourseManager.swift */,
 			);
 			path = "ects-calculator";
 			sourceTree = "<group>";
@@ -137,6 +152,11 @@
 			files = (
 				0547F268212DF1540086B0F7 /* ViewController.swift in Sources */,
 				0547F266212DF1540086B0F7 /* AppDelegate.swift in Sources */,
+				0547F27A212EA85A0086B0F7 /* SubjectsTableViewController.swift in Sources */,
+				0547F27E212EAA570086B0F7 /* Semester.swift in Sources */,
+				0547F282212EBB4B0086B0F7 /* CourseManager.swift in Sources */,
+				0547F280212EAD2F0086B0F7 /* Subject.swift in Sources */,
+				0547F27C212EA8950086B0F7 /* SemestersTableViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -290,7 +310,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rafaoncloud.ects-calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -308,7 +328,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.rafaoncloud.ects-calculator";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
