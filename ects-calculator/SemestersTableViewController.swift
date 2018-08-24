@@ -30,13 +30,31 @@ class SemestersTableViewController: UITableViewController {
         
         // Load Semesters
         self.loadFromCoreData()
+        
+        // Setup pull-to-refresh
+        self.setupRefreshControl()
     }
-
+    
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
 
+    func setupRefreshControl() {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action:  #selector(refreshTable), for: UIControlEvents.valueChanged)
+        self.refreshControl = refreshControl
+    }
+    
+    // Awakened event/action when refresh control is clicked
+    @objc private func refreshTable(_ sender: Any) {
+        // Refresh Data
+        self.loadFromCoreData()
+        
+        // Stop refresh control
+        self.refreshControl?.endRefreshing()
+    }
+    
     func loadFromCoreData(){
         let fetchRequest: NSFetchRequest<Semester> = Semester.fetchRequest()
         
