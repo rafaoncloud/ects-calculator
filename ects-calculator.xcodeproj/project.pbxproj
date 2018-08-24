@@ -21,6 +21,8 @@
 		0547F2BF212F051B0086B0F7 /* Subject+CoreDataClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F2BB212F051B0086B0F7 /* Subject+CoreDataClass.swift */; };
 		0547F2C0212F051B0086B0F7 /* Subject+CoreDataProperties.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F2BC212F051B0086B0F7 /* Subject+CoreDataProperties.swift */; };
 		0547F2C2212F08B30086B0F7 /* PersistenceService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F2C1212F08B30086B0F7 /* PersistenceService.swift */; };
+		0547F2C4213025E90086B0F7 /* SemesterTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F2C3213025E90086B0F7 /* SemesterTableViewCell.swift */; };
+		0547F2C6213026180086B0F7 /* SubjectTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F2C5213026180086B0F7 /* SubjectTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -40,6 +42,8 @@
 		0547F2BB212F051B0086B0F7 /* Subject+CoreDataClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Subject+CoreDataClass.swift"; path = "db/Subject+CoreDataClass.swift"; sourceTree = "<group>"; };
 		0547F2BC212F051B0086B0F7 /* Subject+CoreDataProperties.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "Subject+CoreDataProperties.swift"; path = "db/Subject+CoreDataProperties.swift"; sourceTree = "<group>"; };
 		0547F2C1212F08B30086B0F7 /* PersistenceService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceService.swift; sourceTree = "<group>"; };
+		0547F2C3213025E90086B0F7 /* SemesterTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SemesterTableViewCell.swift; sourceTree = "<group>"; };
+		0547F2C5213026180086B0F7 /* SubjectTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SubjectTableViewCell.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,6 +91,8 @@
 				0547F2BB212F051B0086B0F7 /* Subject+CoreDataClass.swift */,
 				0547F2BC212F051B0086B0F7 /* Subject+CoreDataProperties.swift */,
 				0547F2C1212F08B30086B0F7 /* PersistenceService.swift */,
+				0547F2C3213025E90086B0F7 /* SemesterTableViewCell.swift */,
+				0547F2C5213026180086B0F7 /* SubjectTableViewCell.swift */,
 			);
 			path = "ects-calculator";
 			sourceTree = "<group>";
@@ -167,12 +173,14 @@
 				0547F268212DF1540086B0F7 /* ViewController.swift in Sources */,
 				0547F2C2212F08B30086B0F7 /* PersistenceService.swift in Sources */,
 				0547F266212DF1540086B0F7 /* AppDelegate.swift in Sources */,
+				0547F2C4213025E90086B0F7 /* SemesterTableViewCell.swift in Sources */,
 				0547F2AC212F00220086B0F7 /* ects-calculator.xcdatamodeld in Sources */,
 				0547F27A212EA85A0086B0F7 /* SubjectsTableViewController.swift in Sources */,
 				0547F2C0212F051B0086B0F7 /* Subject+CoreDataProperties.swift in Sources */,
 				0547F2BE212F051B0086B0F7 /* Semester+CoreDataProperties.swift in Sources */,
 				0547F282212EBB4B0086B0F7 /* CourseManager.swift in Sources */,
 				0547F27C212EA8950086B0F7 /* SemestersTableViewController.swift in Sources */,
+				0547F2C6213026180086B0F7 /* SubjectTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
