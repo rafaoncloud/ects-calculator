@@ -39,6 +39,12 @@ class SemestersTableViewController: UITableViewController {
 
     func loadFromCoreData(){
         let fetchRequest: NSFetchRequest<Semester> = Semester.fetchRequest()
+        
+        // Sort Semesters by Year and Semester after get from db
+        let sortDescriptor = NSSortDescriptor(key: "year", ascending: true)
+        let sortDescriptor1 = NSSortDescriptor(key: "semester", ascending: true)
+        fetchRequest.sortDescriptors = [sortDescriptor,sortDescriptor1]
+        
         // Load semesters
         do{
             let semesters = try PersistenceService.context.fetch(fetchRequest)
@@ -82,8 +88,8 @@ class SemestersTableViewController: UITableViewController {
             semesterObj.year = year
             semesterObj.semester = semester
             
-            PersistenceService.saveContext()
             // Update This Table
+            PersistenceService.saveContext()
             self.semesters.append(semesterObj)
             self.tableView.reloadData()
             print("Semester Added")
@@ -128,9 +134,18 @@ class SemestersTableViewController: UITableViewController {
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let semester = semesters[indexPath.row]
+        
+        let storyBoard = UIStoryboard(name: "Main", bundle: nil)
+        let subjectsTVC = storyBoard.instantiateViewController(withIdentifier: "SubjectsTableViewController") as! SubjectsTableViewController;
+        
+        // Assign Value
+        subjectsTVC.semester = semesters[indexPath.row]
+        
+        
+        self.navigationController?.pushViewController(subjectsTVC, animated: true)
+        
         // Go to other ControllerView and send the semester to get the associated subjects
-        self.performSegue(withIdentifier: "semesterSubjects", sender: semester)
+        //self.performSegue(withIdentifier: "semesterSubjects", sender: semester)
     }
     
     /*

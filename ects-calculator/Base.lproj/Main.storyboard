@@ -181,7 +181,6 @@
                                     <outlet property="semesterValueLbl" destination="6CO-xg-ynD" id="J7q-Lg-bRU"/>
                                     <outlet property="yearLbl" destination="nEV-x6-Wpk" id="26j-k7-pQk"/>
                                     <outlet property="yearValueLbl" destination="6s6-15-dcK" id="Uld-cs-mMH"/>
-                                    <segue destination="mpS-XN-Y9l" kind="show" identifier="semesterSubjects" id="uKt-Va-xsO"/>
                                 </connections>
                             </tableViewCell>
                         </prototypes>
@@ -209,13 +208,13 @@
         <!--Subjects-->
         <scene sceneID="bQ8-Hf-ZmU">
             <objects>
-                <tableViewController id="mpS-XN-Y9l" customClass="SubjectsTableViewController" customModule="ects_calculator" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="SubjectsTableViewController" id="mpS-XN-Y9l" customClass="SubjectsTableViewController" customModule="ects_calculator" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="uSB-cy-6Xt">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <prototypes>
-                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="vcx-x1-gac" customClass="SubjectTableViewCell" customModule="ects_calculator" customModuleProvider="target">
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="subjectCell" id="vcx-x1-gac" customClass="SubjectTableViewCell" customModule="ects_calculator" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="vcx-x1-gac" id="KEx-gF-aIw">
@@ -266,6 +265,14 @@
                                         </label>
                                     </subviews>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="abbreviationLbl" destination="wMr-Zx-Cf6" id="A9w-rJ-s2c"/>
+                                    <outlet property="ectsLbl" destination="6MV-GH-Vpc" id="9g7-h4-KL4"/>
+                                    <outlet property="ectsValueLbl" destination="f0t-Em-ElE" id="w4q-TE-0CY"/>
+                                    <outlet property="fullNameLbl" destination="812-99-KHD" id="Ibx-gF-szZ"/>
+                                    <outlet property="gradeLbl" destination="1nw-qu-tvT" id="6bw-YC-rhe"/>
+                                    <outlet property="gradeValueLbl" destination="01z-Tw-Efu" id="vY7-9L-nGz"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
@@ -283,7 +290,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6ZF-Fh-fqg" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2231" y="775"/>
+            <point key="canvasLocation" x="2239" y="775"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="wAv-UU-iCt">

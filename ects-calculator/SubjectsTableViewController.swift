@@ -12,6 +12,7 @@ import CoreData
 class SubjectsTableViewController: UITableViewController {
 
     var subjects = [Subject]()
+    var semester: Semester!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -21,6 +22,9 @@ class SubjectsTableViewController: UITableViewController {
 
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        
+        self.tableView.delegate = self
+        self.tableView.dataSource = self
         
         self.loadFromCoreData()
     }
@@ -32,6 +36,7 @@ class SubjectsTableViewController: UITableViewController {
 
     func loadFromCoreData(){
         let fetchRequest: NSFetchRequest<Subject> = Subject.fetchRequest()
+        
         // Load semesters
         do{
             let subjects = try PersistenceService.context.fetch(fetchRequest)
@@ -47,7 +52,6 @@ class SubjectsTableViewController: UITableViewController {
         }
         alert.addTextField { (textField) in
             textField.placeholder = "Full Name"
-            textField.keyboardType = .numberPad
         }
         alert.addTextField { (textField) in
             textField.placeholder = "ECTS"
@@ -86,10 +90,15 @@ class SubjectsTableViewController: UITableViewController {
             subject.ects = ects
             subject.grade = grade
             
-            PersistenceService.saveContext()
+            // Add relationship
+            self.semester.addToSubjects(subject)
+            subject.semester = self.semester
+            
             // Update This Table
+            PersistenceService.saveContext()
             self.subjects.append(subject)
             self.tableView.reloadData()
+            print("Subject Added")
         }
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
             print("Add Subject Canceled")
@@ -116,15 +125,19 @@ class SubjectsTableViewController: UITableViewController {
         return subjects.count
     }
 
-    /*
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
-
+        let cell = tableView.dequeueReusableCell(withIdentifier: SubjectTableViewCell.cellReuseIdentifier, for: indexPath) as! SubjectTableViewCell
+        
         // Configure the cell...
-
+        let subject = subjects[indexPath.row]
+        
+        cell.abbreviationLbl?.text = subject.abbreviation
+        cell.fullNameLbl?.text = subject.fullName
+        cell.ectsValueLbl?.text = String(subject.ects)
+        cell.gradeValueLbl?.text = String(subject.grade)
+        
         return cell
     }
-    */
 
     /*
     // Override to support conditional editing of the table view.
