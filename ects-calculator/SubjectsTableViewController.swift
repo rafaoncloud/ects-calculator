@@ -37,6 +37,10 @@ class SubjectsTableViewController: UITableViewController {
     func loadFromCoreData(){
         let fetchRequest: NSFetchRequest<Subject> = Subject.fetchRequest()
         
+        // Only fetch subjects witch belong to the given semester
+        let predicate = NSPredicate(format: "semester == %@", semester)
+        fetchRequest.predicate = predicate
+        
         // Load semesters
         do{
             let subjects = try PersistenceService.context.fetch(fetchRequest)
@@ -46,6 +50,7 @@ class SubjectsTableViewController: UITableViewController {
     }
     
     @IBAction func AddSubject(_ sender: UIBarButtonItem) {
+        // Create a Alert Dialog
         let alert = UIAlertController(title: "Add Subject", message: nil, preferredStyle: .alert)
         alert.addTextField { (textField) in
             textField.placeholder = "Abbreviation"
@@ -61,6 +66,7 @@ class SubjectsTableViewController: UITableViewController {
             textField.placeholder = "Grade"
             textField.keyboardType = .numberPad
         }
+        // Add the Add Button
         let action = UIAlertAction(title: "Add", style: .default) { (_) in
             
             // Get values from the alert Text Fields
@@ -100,6 +106,7 @@ class SubjectsTableViewController: UITableViewController {
             self.tableView.reloadData()
             print("Subject Added")
         }
+        // Add the cancel Button
         let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
             print("Add Subject Canceled")
         })

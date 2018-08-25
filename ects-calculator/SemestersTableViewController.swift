@@ -124,6 +124,10 @@ class SemestersTableViewController: UITableViewController {
         return Int(string) != nil
     }
     
+    func semesterECTSandAverage(semester: Semester) {
+        
+    }
+    
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
@@ -144,6 +148,8 @@ class SemestersTableViewController: UITableViewController {
         // Add the cast to the specific cell representation -> Semester
         // Also indicate the Identifier -> semesterCell described in Interface Builder
         let cell: SemesterTableViewCell = tableView.dequeueReusableCell(withIdentifier: SemesterTableViewCell.cellReuseIdentifier, for: indexPath) as! SemesterTableViewCell
+        
+        let (ects, average) = semesterECTSandAverage(semester)
         
         // Configure the cell...
         cell.fillCell(yearValue: String(semester.year), semesterValue: String(semester.semester), ectsValue: String(" "), averageValue: String(" "))
