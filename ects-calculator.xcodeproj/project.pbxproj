@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0504E8A521320B2900FCD1A2 /* AboutUsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0504E8A421320B2900FCD1A2 /* AboutUsViewController.swift */; };
 		0547F266212DF1540086B0F7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F265212DF1540086B0F7 /* AppDelegate.swift */; };
 		0547F268212DF1540086B0F7 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0547F267212DF1540086B0F7 /* ViewController.swift */; };
 		0547F26B212DF1540086B0F7 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0547F269212DF1540086B0F7 /* Main.storyboard */; };
@@ -26,6 +27,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		0504E8A421320B2900FCD1A2 /* AboutUsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AboutUsViewController.swift; sourceTree = "<group>"; };
 		0547F262212DF1540086B0F7 /* ects-calculator.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "ects-calculator.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0547F265212DF1540086B0F7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0547F267212DF1540086B0F7 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -79,6 +81,7 @@
 				0547F265212DF1540086B0F7 /* AppDelegate.swift */,
 				0547F267212DF1540086B0F7 /* ViewController.swift */,
 				0547F269212DF1540086B0F7 /* Main.storyboard */,
+				0504E8A421320B2900FCD1A2 /* AboutUsViewController.swift */,
 				0547F26C212DF1550086B0F7 /* Assets.xcassets */,
 				0547F26E212DF1550086B0F7 /* LaunchScreen.storyboard */,
 				0547F271212DF1550086B0F7 /* Info.plist */,
@@ -172,6 +175,7 @@
 				0547F2BD212F051B0086B0F7 /* Semester+CoreDataClass.swift in Sources */,
 				0547F268212DF1540086B0F7 /* ViewController.swift in Sources */,
 				0547F2C2212F08B30086B0F7 /* PersistenceService.swift in Sources */,
+				0504E8A521320B2900FCD1A2 /* AboutUsViewController.swift in Sources */,
 				0547F266212DF1540086B0F7 /* AppDelegate.swift in Sources */,
 				0547F2C4213025E90086B0F7 /* SemesterTableViewCell.swift in Sources */,
 				0547F2AC212F00220086B0F7 /* ects-calculator.xcdatamodeld in Sources */,
