@@ -124,8 +124,34 @@ class SemestersTableViewController: UITableViewController {
         return Int(string) != nil
     }
     
-    func semesterECTSandAverage(semester: Semester) {
+    // Return ECTS and Average for the current semester
+    func semesterECTSandAverage(semester: Semester) -> (Int, Float){
+        // Fetch Subjects
+        let subjects: [Subject] = SubjectsTableViewController.fetchSubjectsBySemester(semester: semester)
         
+        var totalEcts: Int = 0
+        var sum: Float = 0
+        
+        for subject in subjects {
+            let ects = Int(subject.ects)
+            let grade = Float(subject.grade)
+            
+            totalEcts += ects
+            
+            let total: Float = Float(ects) * grade
+            
+            sum += total
+        }
+        
+        if(totalEcts == 0){
+            return (0,0)
+        }
+        
+        // Proceed final calculation
+        
+        let average: Float = sum / Float(totalEcts)
+        
+        return (totalEcts, average)
     }
     
     // MARK: - Table view data source
@@ -149,11 +175,16 @@ class SemestersTableViewController: UITableViewController {
         // Also indicate the Identifier -> semesterCell described in Interface Builder
         let cell: SemesterTableViewCell = tableView.dequeueReusableCell(withIdentifier: SemesterTableViewCell.cellReuseIdentifier, for: indexPath) as! SemesterTableViewCell
         
-        let (ects, average) = semesterECTSandAverage(semester)
+        let (ects, average) = semesterECTSandAverage(semester: semester)
         
-        // Configure the cell...
-        cell.fillCell(yearValue: String(semester.year), semesterValue: String(semester.semester), ectsValue: String(" "), averageValue: String(" "))
-        
+        // No Values to show
+        if(ects <= 0 || average < 10){
+            // Configure the cell...
+            cell.fillCell(yearValue: String(semester.year), semesterValue: String(semester.semester), ectsValue: String(" "), averageValue: String(" "))
+        }else{
+            // Configure the cell...
+            cell.fillCell(yearValue: String(semester.year), semesterValue: String(semester.semester), ectsValue: String(ects), averageValue: String(format: "%.2f", average))
+        }
         return cell
     }
     

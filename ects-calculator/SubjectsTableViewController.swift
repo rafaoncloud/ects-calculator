@@ -35,6 +35,11 @@ class SubjectsTableViewController: UITableViewController {
     }
 
     func loadFromCoreData(){
+        self.subjects = SubjectsTableViewController.fetchSubjectsBySemester(semester: semester)
+        self.tableView.reloadData()
+    }
+    
+    public static func fetchSubjectsBySemester(semester: Semester) -> [Subject]{
         let fetchRequest: NSFetchRequest<Subject> = Subject.fetchRequest()
         
         // Only fetch subjects witch belong to the given semester
@@ -44,9 +49,11 @@ class SubjectsTableViewController: UITableViewController {
         // Load semesters
         do{
             let subjects = try PersistenceService.context.fetch(fetchRequest)
-            self.subjects = subjects
-            self.tableView.reloadData()
-        }catch {}
+            return subjects
+        }catch {
+            print("Error fetching Subjects by Semester")
+        }
+        return []
     }
     
     @IBAction func AddSubject(_ sender: UIBarButtonItem) {
